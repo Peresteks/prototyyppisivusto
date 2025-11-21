@@ -19,7 +19,7 @@ html {
 
 /* Perusnavigaatio */
 .navbar {
-  background-color: rgb(0, 54, 90);
+  background-color: rgb(0, 78, 130);
   padding: 0;
   display: block;
   position: sticky;
@@ -105,7 +105,10 @@ html {
   .menu-btn {
     display: block;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    font-size: 16px;
+    font-size: 28px;
+    padding: 10px;
+    width: 57px;
+    text-align: center;
   }
 
   /* Oletuksena valikko piiloon */
@@ -119,16 +122,17 @@ html {
     float: none;
     width: 100%;
     border-top: 1px solid rgba(255,255,255,0.3);
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .nav-links li a {
     text-align: center;
+    padding: 10px;
   }
 
   footer {
-    font-size: 16px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 16px;
   }
 }
 
