@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Prototyyppisivusto</title>
+  </head>
+
+  <body>
+
+<nav class="navbar">
+
+  <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="./index.html">Etusivu</a></li>
+    <li><a class="active" href="./second.html">Sivu 2</a></li>
+    <li><a href="./third.html">Sivu 3</a></li>
+    <li><a href="./fourth.html">Sivu 4</a></li>
+    <li><a href="./fifth.html">Sivu 5</a></li>
+  </ul>
+
+</nav>
+
+<header>
+      <h1>Tämä on testisivu 2</h1>
+      <h2>This is a test page 2</h2>
+    </header>
+    
+<script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = (nav.style.display === "block") ? "none" : "block";
+}
+</script>
+
+    <footer>© Oy Yhtiö Ab 2025</footer>
+  </body>
+</html>
