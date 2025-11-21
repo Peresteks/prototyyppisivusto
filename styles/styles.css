@@ -105,7 +105,7 @@ html {
   .menu-btn {
     display: block;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    font-size: 10px;
+    font-size: 16px;
   }
 
   /* Oletuksena valikko piiloon */
@@ -119,7 +119,7 @@ html {
     float: none;
     width: 100%;
     border-top: 1px solid rgba(255,255,255,0.3);
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .nav-links li a {
@@ -127,8 +127,8 @@ html {
   }
 
   footer {
-    font-size: 10px;
-    padding: 10px 12px;
+    font-size: 16px;
+    padding: 20px;
   }
 }
 
