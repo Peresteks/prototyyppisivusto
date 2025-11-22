@@ -1,8 +1,37 @@
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: var(--background-color);
   background-attachment: fixed;
   font-family: "Inter", sans-serif;
   margin: 0;
+}
+
+:root {
+  --primary-color: rgb(0, 78, 130);
+  --secondary-color: rgb(0, 54, 90);
+  --header-color: rgb(0, 78, 130);
+  --ui-text-color: rgb(255, 255, 255);
+  --content-text-color: rgb(0, 0, 0);
+  --background-color: rgb(255, 255, 255);
+}
+
+.dark-mode {
+  --primary-color: rgb(0, 78, 130);
+  --secondary-color: rgb(0, 54, 90);
+  --header-color: rgb(255, 255, 255);
+  --ui-text-color: rgb(255, 255, 255);
+  --content-text-color: rgb(255, 255, 255);
+  --background-color: rgb(60, 60, 60);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: rgb(0, 78, 130);
+    --secondary-color: rgb(0, 54, 90);
+    --header-color: rgb(255, 255, 255);
+    --ui-text-color: rgb(255, 255, 255);
+    --content-text-color: rgb(255, 255, 255);
+    --background-color: rgb(60, 60, 60);
+  }
 }
 
 @font-face {
@@ -19,7 +48,7 @@ html {
 
 /* Perusnavigaatio */
 .navbar {
-  background-color: rgb(0, 78, 130);
+  background-color: var(--primary-color);
   padding: 0;
   display: block;
   position: sticky;
@@ -41,7 +70,7 @@ html {
 }
 
 .menu-btn:hover {
-  background-color: rgb(0, 54, 90);
+  background-color: var(--secondary-color);
 }
 
 /* Horisontaalinen navigaatio */
@@ -61,13 +90,13 @@ html {
 .nav-links li a {
   display: block;
   padding: 14px 16px;
-  color: white;
+  color: var(--ui-text-color);
   text-decoration: none;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-links li a:hover:not(.active) {
-  background-color: rgb(0, 54, 90);
+  background-color: var(--secondary-color);
 }
 
 @media screen and (min-width: 601px) {
@@ -108,7 +137,7 @@ html {
 }
 
 .nav-links li a.active {
-  background-color: rgb(0, 54, 90);
+  background-color: var(--secondary-color);
 }
 
 /* Pieni näyttö */
@@ -124,10 +153,20 @@ html {
     text-align: center;
   }
 
-  /* Oletuksena valikko piiloon */
+  /* Slide-down kontti */
   .nav-links {
-    display: none;
+    flex-direction: column;
     width: 100%;
+    overflow: hidden;
+
+    /* Suljettu tila */
+    max-height: 0;              
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.open {
+    /* Riittävän suuri arvo, jotta kaikki mahtuvat */
+    max-height: 500px;
   }
 
   /* Pystymallinen valikko */
@@ -169,20 +208,20 @@ html {
 }
 
 h1 {
-  color: rgb(0, 78, 130);
+  color: var(--header-color);
   text-align: center;
   
 }
 
 h2 {
-  color: rgb(0, 78, 130);
+  color: var(--header-color);
   text-align: center;
 }
 
 p {
   font-size: 25px;
   text-align: center;
-  color: rgb(0, 78, 130);
+  color: var(--content-text-color);
 }
 .flex-container {
   display: flex;
@@ -192,9 +231,9 @@ p {
 }
 
 .box {
-  background-color: rgb(0, 78, 130);
+  background-color: var(--primary-color);
   padding: 20px;
-  color: white;
+  color: var(--ui-text-color);
   text-align: center;
   font-weight: 600;
   border-radius: 10px;
@@ -206,7 +245,7 @@ p {
 .box:hover {
   cursor: pointer;
   transform: scale(1.05);
-  background-color: rgb(0, 54, 90);
+  background-color: var(--secondary-color);
   box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.4);
 }
 
@@ -218,9 +257,9 @@ p {
 }
 
 .grid-item {
-  background-color: rgb(0, 78, 130);
+  background-color: var(--primary-color);
   padding: 20px;
-  color: white;
+  color: var(--ui-text-color);
   text-align: center;
   border-radius: 10px;
   font-size: 40px;
@@ -233,16 +272,16 @@ p {
 .grid-item:hover {
   cursor: pointer;
   transform: scale(1.02);
-  background-color: rgb(0, 54, 90);
+  background-color: var(--secondary-color);
   box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.4);
 }
 
 footer {
     text-align: center;
-    background-color: rgb(0, 78, 130);
+    background-color: var(--primary-color);
     display: block;
     bottom: 0;
-    color: rgb(255, 255, 255);
+    color: var(--ui-text-color);
     position: fixed;
     width: 100%;
     box-shadow: 0px -5px 10px 5px rgba(0, 0, 0, 0.2);
