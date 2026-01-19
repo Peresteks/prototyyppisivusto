@@ -23,6 +23,7 @@
   </ul>
 
 </nav>
+<button id="wakelock">Pidä näyttö päällä</button>
 
 <header>
       <h1>Tämä on testisivu</h1>
@@ -50,6 +51,19 @@ function toggleMenu() {
   const nav = document.getElementById("navLinks");
   nav.classList.toggle("open");
 }
+
+let wakeLock = null;
+
+async function enableWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    console.log('Näyttö pysyy päällä');
+  } catch (err) {
+    console.error(err.name, err.message);
+  }
+}
+
+document.getElementById('wakelock').addEventListener('click', enableWakeLock);
 </script>
 
     <footer>© Oy Yhtiö Ab 2026</footer>
